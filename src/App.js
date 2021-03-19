@@ -25,14 +25,12 @@ function App() {
             setQuotes(data.quotes);
             getRandomQuote(data.quotes);
             setError(false);
+            setLoading(false);
           }, 1000);
         } else {
           setError(true);
-        }
-
-        setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }
       } catch (err) {
         setTimeout(() => {
           setError(true);
@@ -59,14 +57,16 @@ function App() {
           <figure className='p-5 px-10'>
             <blockquote
               id='text'
-              className='font-serif text-xl italic relative'
+              className={`font-serif text-xl italic relative ${
+                loading ? 'animate-pulse' : ''
+              }`}
             >
               {quote?.quote || (
-                <div className={`space-y-2 ${!!loading && 'animate-pulse'}`}>
+                <>
+                  <div className='h-4 bg-gray-300 rounded mb-1'></div>
                   <div className='h-4 bg-gray-300 rounded'></div>
-                  <div className='h-4 bg-gray-300 rounded'></div>
-                  <div className='h-4 bg-gray-300 rounded w-5/6'></div>
-                </div>
+                  <div className='h-4 bg-gray-300 rounded w-5/6 inline-block'></div>{' '}
+                </>
               )}
             </blockquote>
             <figcaption
