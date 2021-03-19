@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# freeCodeCamp - _Random Quote Machine_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created with love by: `Thang`
 
-## Available Scripts
+View online at: [https://lqt-quote-machine.netlify.app](https://lqt-quote-machine.netlify.app)
 
-In the project directory, you can run:
+Summary: This app show a random quote which can be changed and share to Twitter.
 
-### `yarn start`
+## Video Walkthrough
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Here's a walkthrough of implemented user stories.
+<a href="https://lqt-quote-machine.netlify.app"><img src="https://i.imgur.com/rS57gqW.gif" height="400"></a>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- TODO: 🎬 Make a gif and show here -->
 
-### `yarn test`
+Libraries use in this projects: React, TailwindCSS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
 
-### `yarn build`
+### The following **required** functionalities are completed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] User Story #1: I can see a wrapper element with a corresponding id="quote-box".
+- [x] User Story #2: Within #quote-box, I can see an element with a corresponding id="text".
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] User Story #3: Within #quote-box, I can see an element with a corresponding id="author".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] User Story #4: Within #quote-box, I can see a clickable element with a corresponding id="new-quote".
 
-### `yarn eject`
+- [x] User Story #5: Within #quote-box, I can see a clickable a element with a corresponding id="tweet-quote".
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] User Story #6: On first load, my quote machine displays a random quote in the element with id="text".
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] User Story #7: On first load, my quote machine displays the random quote's author in the element with id="author".
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [x] User Story #8: When the #new-quote button is clicked, my quote machine should fetch a new quote and display it in the #text element.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [x] User Story #9: My quote machine should fetch the new quote's author when the #new-quote button is clicked and display it in the #author element.
 
-## Learn More
+- [x] User Story #10: I can tweet the current quote by clicking on the #tweet-quote a element. This a element should include the "twitter.com/intent/tweet" path in its href attribute to tweet the current quote.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [x] User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Time Spent
 
-### Code Splitting
+Time spent: **5** hours spent in total.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 1.5 hours for the user stories.
+- 3.5 hours for styling with TailwindCSS (used for the first time).
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Copyright [2021] [Le Quang Thang]
 
-### Making a Progressive Web App
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+        http://www.apache.org/licenses/LICENSE-2.0
 
-### Advanced Configuration
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# A Random Quote Machine
 
-### Deployment
+Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/qRZeGZ.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
 
-### `yarn build` fails to minify
+You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can build your project by using this CodePen template and clicking Save to create your own pen. Or you can use this CDN link to run the tests in any environment you like: https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Once you're done, submit the URL to your working project with all its tests passing.
+
+Note: Twitter does not allow links to be loaded in an iframe. Try using the target="\_blank" or target="\_top" attribute on the #tweet-quote element if your tweet won't load. target="\_top" will replace the current tab so make sure your work is saved.
