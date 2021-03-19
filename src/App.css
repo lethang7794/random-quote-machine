@@ -3,8 +3,15 @@
 }
 
 blockquote::before {
+  content: open-quote;
+}
+
+blockquote {
+  quotes: '“' '”' '‘' '’';
+}
+
+blockquote::before {
   font-family: Arial;
-  content: '\201C';
   color: hsl(160, 84%, 39%);
   font-size: 6rem;
   position: absolute;
@@ -41,7 +48,7 @@ blockquote::before {
   zoom: 1;
 }
 .xl .btn {
-  height: 28px;
+  height: 32px;
   border-radius: 4px;
   padding: 1px 6px 1px 6px;
 }
@@ -55,7 +62,18 @@ blockquote::before {
   border-radius: 3px;
   font-weight: 500;
   cursor: pointer;
+  border: 2px solid transparent;
 }
+
+#widget:hover .btn {
+  border: 2px solid currentColor;
+}
+
+.btn .label {
+  margin-left: 3px;
+  white-space: nowrap;
+}
+
 .xl .btn i {
   top: 4px;
   height: 18px;

@@ -20,21 +20,24 @@ function App() {
 
         if (response.ok) {
           const data = await response.json();
-          setQuotes(data.quotes);
-          getRandomQuote(data.quotes);
-          setError(false);
+
+          setTimeout(() => {
+            setQuotes(data.quotes);
+            getRandomQuote(data.quotes);
+            setError(false);
+          }, 1000);
         } else {
           setError(true);
         }
 
         setTimeout(() => {
           setLoading(false);
-        }, 300);
+        }, 1000);
       } catch (err) {
         setTimeout(() => {
           setError(true);
           setLoading(false);
-        }, 300);
+        }, 1000);
       }
     };
     fetchQuotes();
@@ -47,37 +50,47 @@ function App() {
 
   return (
     <div className='App min-h-screen flex justify-center items-center bg-gradient-to-r from-green-100 to-green-200 px-6'>
-      {loading && <h1>Loading</h1>}
       {error && <h1>Sorry, we can't get the quotes for you! 🙇‍♂️</h1>}
-      {!loading && !error && quote && (
+      {!error && (
         <div
           id='quote-box'
-          className='w-96 max-w-sm mx-auto bg-white rounded shadow-xl'
+          className='w-96 max-w-sm mx-auto bg-white rounded shadow-xl transition-height duration-500 ease-in-out'
         >
           <figure className='p-5 px-10'>
             <blockquote
               id='text'
               className='font-serif text-xl italic relative'
             >
-              {quote?.quote}
+              {quote?.quote || (
+                <div className={`space-y-2 ${!!loading && 'animate-pulse'}`}>
+                  <div className='h-4 bg-gray-300 rounded'></div>
+                  <div className='h-4 bg-gray-300 rounded'></div>
+                  <div className='h-4 bg-gray-300 rounded w-5/6'></div>
+                </div>
+              )}
             </blockquote>
             <figcaption
               id='author'
-              className='mt-2 font-sans text-right text-gray-700 '
+              className={`mt-2 font-sans text-right text-gray-700  ${
+                !!loading && 'animate-pulse'
+              }`}
             >
-              — {quote?.author}
+              —{' '}
+              {quote?.author || (
+                <div className='h-4 bg-gray-300 rounded w-20 inline-block align-text-bottom'></div>
+              )}
             </figcaption>
           </figure>
           <div
             id='button-bar'
             className='p-3 flex w-full justify-between rounded rounded-t-none pt-3 bg-gray-500'
           >
-            <div className='xl flex items-center'>
+            <div className={'xl flex items-center'}>
               <div id='widget'>
                 <div className='btn-o' style={{ width: 76 }}>
                   <a
                     href={`https://twitter.com/intent/tweet?text=${quote?.quote}%0A- ${quote?.author}`}
-                    className='btn'
+                    className={`btn ${!!loading && 'pointer-events-none	'}`}
                     id='tweet-quote'
                     target='_blank'
                     rel='noreferrer'
@@ -94,7 +107,10 @@ function App() {
             <button
               id='new-quote'
               onClick={() => getRandomQuote(quotes)}
-              className='p-2 bg-green-500 text-white border-white border-2'
+              className={`p-2 bg-green-500 disabled:opacity-50 text-white border-transparent hover:border-white border-2 ${
+                !!loading && 'pointer-events-none	'
+              }`}
+              disabled={loading ? true : false}
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
