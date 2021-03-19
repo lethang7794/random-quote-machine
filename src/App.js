@@ -71,7 +71,7 @@ function App() {
             </blockquote>
             <figcaption
               id='author'
-              className={`mt-2 font-sans text-right text-gray-700  ${
+              className={`mt-2 font-sans text-right text-green-600 font-bold  ${
                 !!loading && 'animate-pulse'
               }`}
             >
