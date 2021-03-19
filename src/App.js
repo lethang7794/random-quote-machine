@@ -8,17 +8,33 @@ function App() {
   const [quotes, setQuotes] = useState([]);
   const [quote, setQuote] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchQuotes = async () => {
       setLoading(true);
-      const response = await fetch(quotesURL);
+      setError(false);
 
-      if (response.ok) {
-        const data = await response.json();
-        setQuotes(data.quotes);
-        getRandomQuote(data.quotes);
-        setLoading(false);
+      try {
+        const response = await fetch(quotesURL);
+
+        if (response.ok) {
+          const data = await response.json();
+          setQuotes(data.quotes);
+          getRandomQuote(data.quotes);
+          setError(false);
+        } else {
+          setError(true);
+        }
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 300);
+      } catch (err) {
+        setTimeout(() => {
+          setError(true);
+          setLoading(false);
+        }, 300);
       }
     };
     fetchQuotes();
@@ -31,7 +47,9 @@ function App() {
 
   return (
     <div className='App min-h-screen flex justify-center items-center bg-gradient-to-r from-green-100 to-green-200 px-6'>
-      {quote && (
+      {loading && <h1>Loading</h1>}
+      {error && <h1>Sorry, we can't get the quotes for you! 🙇‍♂️</h1>}
+      {!loading && !error && quote && (
         <div
           id='quote-box'
           className='w-96 max-w-sm mx-auto bg-white rounded shadow-xl'
