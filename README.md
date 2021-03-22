@@ -12,15 +12,15 @@ Here's a walkthrough of implemented user stories:
 
 - Quote loading skeleton.
 
-<a href="https://lqt-quote-machine.netlify.app"><img src="http://g.recordit.co/TIOV0GyF5G.gif" max-height="400"></a>
+    <a href="https://lqt-quote-machine.netlify.app"><img src="http://g.recordit.co/TIOV0GyF5G.gif" height="auto" width="500px"></a>
 
 - Fetch a new quote and display it when the new quote button is clicked.
 
-<a href="https://lqt-quote-machine.netlify.app"><img src="http://g.recordit.co/spUhPRoacn.gif" max-height="400"></a>
+    <a href="https://lqt-quote-machine.netlify.app"><img src="http://g.recordit.co/spUhPRoacn.gif" height="auto" width="500px"></a>
 
 - Tweet the current quote.
 
-<a href="https://lqt-quote-machine.netlify.app"><img src="http://g.recordit.co/An1rEkSjPl.gif" max-height="400"></a>
+    <a href="https://lqt-quote-machine.netlify.app"><img src="http://g.recordit.co/An1rEkSjPl.gif" height="auto" width="500px"></a>
 
 <!-- TODO: 🎬 Make a gif and show here -->
 
